@@ -22,7 +22,6 @@ navigation: # Navigation links
 
 
 tagline: >
-  Pew Pew
 
 hero_img: posts/Background.jfif # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
