@@ -1,24 +1,18 @@
 # SITE CONFIGURATION
-title: Sleek # your site title
-author: GitHub User # You :P
-description: > # Meta description of Homepage
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/sleek" # the subpath of your site, e.g. /blog
-url: "https://janczizikow.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+title: Ret2Pwn # your site title
+author: Hazem Hisham # You :P
+description: Binary Exploitation Player | Wannabe Red Team Operator
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://xret2pwn.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
 social:
-  name: Your Name
+  name: Ret2pwn
   links:
-    - https://twitter.com/BenBalter
-    - https://www.facebook.com/ben.balter
-    - https://www.linkedin.com/in/BenBalter
-    - https://plus.google.com/+BenBalter
-    - https://github.com/benbalter
-    - https://keybase.io/benbalter
-
+    - https://twitter.com/RET2_pwn
+    - https://github.com/xRET2pwn
+    - https://www.linkedin.com/in/hazem-hesham/
 # THEME SETTINGS
 navigation: # Navigation links
   - {name: 'Home', link: '/'}
