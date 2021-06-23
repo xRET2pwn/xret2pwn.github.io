@@ -29,6 +29,7 @@ hero_img: posts/Background.jfif # Main background image: use the path from /asse
 
 twitter_username: Ret2Pwn # replace with your_twitter_username or comment to remove link from footer
 github_username:  xRet2Pwn # replace with your_github_username or comment to remove link from footer
+linkedin_username: hazemhesham
 #instagram_username: # replace with your_instagram_username or comment to remove link from footer
 
 disqus:
