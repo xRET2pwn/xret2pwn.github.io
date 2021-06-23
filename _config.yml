@@ -65,4 +65,3 @@ compress_html:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-toc
