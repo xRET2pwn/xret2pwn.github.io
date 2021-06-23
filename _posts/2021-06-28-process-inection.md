@@ -52,12 +52,12 @@ int main()
 
 ```
 
-![screenshot_1](figures/cpp_normal_behavier.png)
+![screenshot_1](Process_Injection/cpp_normal_behavier.png)
 
 
 The next step is to compile -> run -> see what will happen.    
 
-![screenshot_2](figures/cpp_normal_behavier_executed.png)
+![screenshot_2](Process_Injection/cpp_normal_behavier_executed.png)
 
 
 As expected our shellcode executed normally into the memory with no issue because we already giving it a READ, WRITE and EXECUTE permission.  
@@ -111,13 +111,13 @@ int main()
 }
 ```
 
-![screenshot_3](figures/cpp_write_the_shellcode.png)
+![screenshot_3](Process_Injection/cpp_write_the_shellcode.png)
 
 The next step is to compile -> run -> see what will happen.    
 
 
 
-![screenshot_4](figures/cpp_write_the_shellcode_executed.png)
+![screenshot_4](Process_Injection/cpp_write_the_shellcode_executed.png)
 
 OH Perfect, we wrote our shellcode successfully. That means we can write in a non-writable allocation.  
 
@@ -176,11 +176,11 @@ int main()
 }
 
 ```
-![screenshot_5](figures/cpp_execute_the_shellcode.png)
+![screenshot_5](Process_Injection/cpp_execute_the_shellcode.png)
 
 The next step is to compile -> run -> see what will happen.    
 
-![screenshot_5](figures/Failed.png)
+![screenshot_5](Process_Injection/Failed.png)
 
 Hmmm, We changed the permission successfully and at the same, we failed to execute our shellcode!!  
 
@@ -189,15 +189,15 @@ Hmmm, We changed the permission successfully and at the same, we failed to execu
 After taking a look at what is happens in the background we found the binary goes perfectly until executing the shellcode when it starts to execute the shellcode fails immediately because the Data Execution Prevention (DEP) protection is enabled.  
 That means we cannot execute a shellcode into the memory because the DEP is blocking any kind of shell coding to run in the memory.  
 
-![screenshot_6](figures/crash.png)
+![screenshot_6](Process_Injection/crash.png)
 
 
 So our next step will be to disable the DEP protection option and recompile it.  
 
-![screenshot_7](figures/Disable_DEP.png)
+![screenshot_7](Process_Injection/Disable_DEP.png)
 
 
-![screenshot_7](figures/cpp_execute_the_shellcode_executed.png)
+![screenshot_7](Process_Injection/cpp_execute_the_shellcode_executed.png)
 
 OH yo-yo, as we expected our shellcode executed normally into the memory 🔥🔥   
 
@@ -255,7 +255,7 @@ int main(int argc, char* argv[])
 
 The next step is to compile -> run -> see what will happen.   
 
-![screenshot_8](figures/Injected.png)
+![screenshot_8](Process_Injection/Injected.png)
 
 Yup, we injected our shellcode successfully without writable/executable allocation.  
 
