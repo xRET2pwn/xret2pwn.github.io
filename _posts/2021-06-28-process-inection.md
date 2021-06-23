@@ -261,8 +261,12 @@ Yup, we injected our shellcode successfully without writable/executable allocati
 
 
 
-_________________________
+_________________________  
+  
+  
+|   Authors    | Twitter | LinkedIn |
+| ----------- | ----------- |----------- |
+| Hazem Hisham (Ret2pwn) | [@Twitter](https://twitter.com/RET2_pwn) |[@LinkedIn](https://www.linkedin.com/in/hazem-hesham/) |
+| Yossef Zidann (Joezid) | [@Twitter](https://twitter.com/yossefzidann)  | [@LinkedIn](https://www.linkedin.com/in/joezid/) |
 
-Hazem Hisham (Ret2pwn)| [@Twitter](https://twitter.com/RET2_pwn) | [@LinkedIn](https://www.linkedin.com/in/hazem-hesham/)
 
-Yossef Zidann | [@Twitter](https://twitter.com/yossefzidann) | [@LinkedIn](https://www.linkedin.com/in/joezid/)
