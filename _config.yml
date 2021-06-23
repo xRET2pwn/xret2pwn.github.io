@@ -16,11 +16,13 @@ social:
 # THEME SETTINGS
 navigation: # Navigation links
   - {name: 'Home', link: '/'}
+  - {name: 'Categories', link: '/categories'}
   - {name: 'About', link: '/about'}
   - {name: 'Contact', link: '/contact'}
 
+
 tagline: >
-  Modern Jekyll theme focused on speed performance &amp; SEO best practices
+  Pew Pew
 
 hero_img: posts/Background.jfif # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
