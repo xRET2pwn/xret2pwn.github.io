@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Bypass Windows Defender"
-featured-img: Bypass_Windows_Defender\background.jpg
+featured-img: Bypass_Windows_Defender\background
 categories: [cpp, shellcode, redteam, Windows Defender]
 ---
 
