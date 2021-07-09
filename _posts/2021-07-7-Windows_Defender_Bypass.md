@@ -5,12 +5,12 @@ featured-img: Bypass_Windows_Defender\background
 categories: [cpp, shellcode, redteam, Windows Defender]
 ---
 
-Hey yo I am back with a new blog post. In this post I am going to talk how to bypass the windows defender to run your meterpreter reverse shell.
+Hey yo I am back with a new blog post. In this post I am going to talk about how to bypass the windows defender to run your meterpreter reverse shell.
 
 
 # SUMMARY
 
-I am going to use the various blog post technique [HERE](https://xret2pwn.github.io/process-inection/) but i will one/two thing(s) which is i will xor my shell code and i will xor again while writing the shellcode into the memory.
+I am going to use the previous blog post technique [HERE](https://xret2pwn.github.io/process-inection/) but i will add one/two thing(s) which is i will xor my shell code and i will xor again while writing the shellcode into the memory.
 
 
 
@@ -44,7 +44,7 @@ So now i will generate my encoded shellcode
 # WINAPIs
 
 Our shellcode is ready now so let's create our process injection binary.  
-But firstly i will describe some winapis we will need it.  
+But firstly i will describe some winapis we will use it.  
 
 
 ## OpenProcess
@@ -56,7 +56,9 @@ HANDLE OpenProcess(
   DWORD dwProcessId
 );
 ```
-I am going to use **OpenProcess** to open a process by giving it the PID of that process. because the main idea of process injection is a create a new allocation space for the shellcode in a local process so before creating a new allocation into the memory you need to open this process first make sense right?  
+I am going to use **OpenProcess** to open a process by giving it the PID of that process. because the main idea of process injection is a create a new allocation space for the shellcode in a local process then write the shellcode in that allocation and execute it so before creating a new allocation into the memory you need to open this process first make sense right?  
+
+NOTE:  
 You need to close the opened handle through **CloseHandle()**
 
 ## VirtualAllocEx
@@ -121,7 +123,7 @@ HANDLE CreateRemoteThread(
 );
 ```
 
-I am going to use **CreateRemoteThread** to create a remote thread object that is connecting it to process and making it runnable.  
+I am going to use **CreateRemoteThread** to create a thread that runs in the virtual address space of another process and optionally specify extended attributes.    
 
 What is the difference between **CreateThread** and **CreateRemoteThread**?  
 
@@ -132,7 +134,7 @@ CreateRemoteThread is allows you to create a thread for anther local process.
 
 # PWN
 
-After discussing some WINAPIs we will need it to create our process injection binary that's bypass the windows defender let's start with creating our CPP.  
+After discussing some WINAPIs we will create our process injection binary that's bypass the windows defender let's start with creating our CPP.  
 
 There is just one step I would like to discuss it before writing the code which is i will decode the shellcode opcode by opcode.   
 
