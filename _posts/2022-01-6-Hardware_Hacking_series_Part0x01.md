@@ -196,7 +196,7 @@ After discovering the UART pins, we would connect them.
 So I will connect the RT with the TX, TX with the RX, and GND with the GND. as the below image.   
 
 
-<IMAGE>
+IMAGE_HERE
 
 
 Then connect it to our laptop.  
@@ -224,7 +224,7 @@ screen /dev/ttyUSB0 115200
 When you connect to it, turn on the devices.   
 
 
-<IMAGE>
+IMAGE_HERE
 
 
 Easy, right?  
@@ -240,7 +240,7 @@ You could face two issues.
 
 You may face UART closed by solder as in the below image.  
 
-<IMAGE>
+IMAGE_HERE
 
 In this case, you will need to use a Hot Air Brushless to remove that solder out of the UART hole.  
 
