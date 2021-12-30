@@ -119,7 +119,8 @@ As we see in the below-printed circuit board.
 As I mentioned before UART has just 4 pinouts and as usual you will find them behind each other. So if we take a close shot, we will find the UART interface.  
 
 
-![screenshot_1](/assets/img/posts/IoTPart1/UART.jpeg)
+
+<img src="/assets/img/posts/IoTPart1/UART.jpeg" style="width:350px;">
 
 **Questions**
 
@@ -147,11 +148,14 @@ As you see below we have a metal grid.
 
 So now everything is ready let's start by rotating the multimeter switch to Conductivity mode, as shown in the image below.    
 
-![screenshot_4](/assets/img/posts/IoTPart1/Conductivity.jpeg)
+<img src="/assets/img/posts/IoTPart1/Conductivity.jpeg" style="width:350px;">
+
 
 Then put one probe on the pin and the other probe on the metal grid, as in the image below.    
 
-![screenshot_4](/assets/img/posts/IoTPart1/GND.jpeg)
+
+<img src="/assets/img/posts/IoTPart1/GND.jpeg" style="width:350px;">
+
 
 If it beeps, that's mean it is a GND pin. if not, move to other pins.    
 
@@ -165,7 +169,7 @@ Then turn the power on, Then put the probe on the pin and the other probe on the
 
 > NOTE: Our board datasheet says VCC must be 3.3V.  
 
-![screenshot_4](/assets/img/posts/IoTPart1/VCC.jpeg)   
+<img src="/assets/img/posts/IoTPart1/VCC.jpeg" style="width:350px;"> 
 
 **TX**  
 
