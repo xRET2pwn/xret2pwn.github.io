@@ -201,7 +201,7 @@ After discovering the UART pins, we would connect them.
 So I will connect the RT with the TX, TX with the RX, and GND with the GND. as the below image.   
 
 
-IMAGE_HERE
+<img src="/assets/img/posts/IoTPart1/Connecting.png" style="width:350px;"> 
 
 
 Then connect it to our laptop.  
