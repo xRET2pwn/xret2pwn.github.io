@@ -44,14 +44,14 @@ In this blog post, I discussed what is the UART and how to find it on the circui
 
 # Table of Contect
 
-1. [Definitions](#Definitions)
-    1. [Universal Asynchronous Receiver-Transmitter (UART) Interface](#Universal-Asynchronous-Receiver-Transmitter-(UART)-Interface)
-2. [How to find UART Interface?](#How-to-find-UART-Interface?)
-    1. [Multimeter](#Multimeter)
-    2. [Logic Analyzer](#Logic-Analyzer)
-3. [Start UART Communication](#Start-UART-Communication)
-4. [Issue could be faced](#Issue-could-be-faced)
-5. [Conclusion](#Conclusion)
+1. [Definitions](#definitions)
+    1. [Universal Asynchronous Receiver-Transmitter (UART) Interface](#universal-asynchronous-receiver-transmitter-uart-interface)
+2. [How to find UART Interface?](#how-to-find-uart-interface)
+    1. [Multimeter](#multimeter)
+    2. [Logic Analyzer](#logic-analyzer)
+3. [Start UART Communication](#start-uart-communication)
+4. [Issue could be faced](#issue-could-be-faced)
+5. [Conclusion](#conclusion)
 
 # Definitions
 
