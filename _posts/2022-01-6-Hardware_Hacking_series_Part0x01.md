@@ -145,60 +145,60 @@ As you see below we have a metal grid.
 ![screenshot_3](/assets/img/posts/IoTPart1/metal.jpeg)
 
 
-So now everything is ready let's start by rotating the multimeter switch to Conductivity mode, as shown in the image below.  
+So now everything is ready let's start by rotating the multimeter switch to Conductivity mode, as shown in the image below.    
 
 ![screenshot_4](/assets/img/posts/IoTPart1/Conductivity.jpeg)
 
-Then put one probe on the pin and the other probe on the metal grid, as in the image below.  
+Then put one probe on the pin and the other probe on the metal grid, as in the image below.    
 
 ![screenshot_4](/assets/img/posts/IoTPart1/GND.jpeg)
 
-If it beeps, that's mean it is a GND pin. if not, move to other pins.  
+If it beeps, that's mean it is a GND pin. if not, move to other pins.    
 
 **VCC**
 
-Let's start by rotating the multimeter switch to DCV, as shown in the image below.   
+Let's start by rotating the multimeter switch to DCV, as shown in the image below.     
 
-![screenshot_4](/assets/img/posts/IoTPart1/DCV.jpeg)
+![screenshot_4](/assets/img/posts/IoTPart1/DCV.jpeg)  
 
-Then turn the power on, Then put the probe on the pin and the other probe on the metal grid. until we find one of the pins has 3.3V.  
+Then turn the power on, Then put the probe on the pin and the other probe on the metal grid. until we find one of the pins has 3.3V.    
 
->>> NOTE: Our board datasheet says VCC must be 3.3V.
+>>> NOTE: Our board datasheet says VCC must be 3.3V.  
 
-![screenshot_4](/assets/img/posts/IoTPart1/VCC.jpeg) 
+![screenshot_4](/assets/img/posts/IoTPart1/VCC.jpeg)   
 
 **TX**
-Here is the most confusing part because the voltage of the TX is not stable you may see it going up and down. Why that's happening?   
-Because when it transmitted data each as logging the voltage will be low. So we can discover that easily in the booting processing.  
-So as usual let is put one of the probes on the pin and the other probe on the metal grid. 
+Here is the most confusing part because the voltage of the TX is not stable you may see it going up and down. Why that's happening?     
+Because when it transmitted data each as logging the voltage will be low. So we can discover that easily in the booting processing.    
+So as usual let is put one of the probes on the pin and the other probe on the metal grid.   
 
-![screenshot_4](/assets/img/posts/IoTPart1/TX.GIF) 
+![screenshot_4](/assets/img/posts/IoTPart1/TX.GIF)   
 
 **RX**
 
-Now we have 3 pins out of 4. by hard guessing I guess this port will be RX, right? 
+Now we have 3 pins out of 4. by hard guessing I guess this port will be RX, right?   
 
 
 ## Logic Analyzer
 
-BLABLABALBLALBLBALBLALB
+BLABLABALBLALBLBALBLALB  
 
 
 # Start UART Communication
 
-After discovering the UART pins, we would connect them.
+After discovering the UART pins, we would connect them.  
 
 
-So I will connect the RT with the TX, TX with the RX, and GND with the GND. as the below image. 
+So I will connect the RT with the TX, TX with the RX, and GND with the GND. as the below image.   
 
 
 <IMAGE>
 
 
-Then connect it to our laptop.
+Then connect it to our laptop.  
 
 
-Okay so now we have done the hardest part, in here feel free you use any tool to communicate with the board.
+Okay so now we have done the hardest part, in here feel free you use any tool to communicate with the board.  
 
 **Tools**
 
@@ -210,45 +210,45 @@ Okay so now we have done the hardest part, in here feel free you use any tool to
 6. CoolTerm
 7. Terminator
 
-I would like to use a screen to connect to the serial console, So I'm gonna select my correct host.tty, and correct read bit.
+I would like to use a screen to connect to the serial console, So I'm gonna select my correct host.tty, and correct read bit.  
 
 ```Bash
 screen /dev/ttyUSB0 115200
 ```
 
-When you connect to it, turn on the devices. 
+When you connect to it, turn on the devices.   
 
 <IMAGE>
 
 
-Easy, right?
+Easy, right?  
 
 # Issue could be faced
 
-You could face two issues.
+You could face two issues.  
 
 1. UART could be closed as there is solder in the hole.
 2. UART's paths could be cut.
 
 ## Solder UART
 
-You may face UART closed by solder as in the below image.
+You may face UART closed by solder as in the below image.  
 
 <IMAGE>
 
-In this case, you will need to use a Hot Air Brushless to remove that solder out of the UART hole.
+In this case, you will need to use a Hot Air Brushless to remove that solder out of the UART hole.  
 
 **Hot Air Brushless**
 
-![screenshot_4](/assets/img/posts/IoTPart1/HotAir.jpg)
+![screenshot_4](/assets/img/posts/IoTPart1/HotAir.jpg)  
 
 ## Broken UART
 
-For broken UART you can see this part of [Flashback Team](https://youtu.be/01mw0oTHwxg?t=884).
+For broken UART you can see this part of [Flashback Team](https://youtu.be/01mw0oTHwxg?t=884).  
 
 # Conclusion
 
-I have Introduced a basic way to start communication with embedded devices (IoT) through the UART interface. Then I showed a real case on how to start UART communication. after that I showed two of the issue you may face in the UART interface. 
+I have Introduced a basic way to start communication with embedded devices (IoT) through the UART interface. Then I showed a real case on how to start UART communication. after that I showed two of the issue you may face in the UART interface.   
 
 
-Ciao Ciao!
+Ciao Ciao!  
