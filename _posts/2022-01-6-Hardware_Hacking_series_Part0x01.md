@@ -51,6 +51,8 @@ In this blog post, I discussed what is the UART and how to find it on the circui
     2. [Logic Analyzer](#logic-analyzer)
 3. [Start UART Communication](#start-uart-communication)
 4. [Issues](#issues)
+    1. [Solder UART](#solder-uart)
+    2. [Broken UART](#broken-uart)
 5. [Conclusion](#conclusion)
 
 # Definitions
