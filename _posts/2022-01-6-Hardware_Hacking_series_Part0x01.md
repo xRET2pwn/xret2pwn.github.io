@@ -176,7 +176,7 @@ Because when it transmitted data each as logging the voltage will be low. So we 
 So as usual let is put one of the probes on the pin and the other probe on the metal grid.   
 
 
-![screenshot_4](/assets/img/posts/IoTPart1/TX.GIF)   
+![screenshot_4](/assets/img/posts/IoTPart1/TX.gif)   
 
 **RX**
 
