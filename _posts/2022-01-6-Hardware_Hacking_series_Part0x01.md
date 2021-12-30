@@ -185,7 +185,7 @@ So as usual let is put one of the probes on the pin and the other probe on the m
 
 **RX**
 
-Now we have 3 pins out of 4. by hard guessing I guess this port will be RX, right?   
+Now we have 3 pins out of 4. by hard guess the last pin should be RX, right?   
 
 
 ## Logic Analyzer
