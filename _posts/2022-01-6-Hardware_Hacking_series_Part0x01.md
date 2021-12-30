@@ -28,7 +28,7 @@ Basic knowledege of reverse engineering, assembly. In case you are not familiar 
 2. [MIPS cheatsheet](https://t1m3m.github.io/posts/MIPS-cheatsheet/)
 
 
-# Sumary
+# Summary
 
 In this blog post, I discussed what is the UART and how to find it on the circuit board to get a cute shell.  
 
