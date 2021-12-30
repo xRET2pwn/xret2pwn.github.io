@@ -163,7 +163,8 @@ If it beeps, that's mean it is a GND pin. if not, move to other pins.
 
 Let's start by rotating the multimeter switch to DCV, as shown in the image below.     
 
-![screenshot_4](/assets/img/posts/IoTPart1/DCV.jpeg)  
+<img src="/assets/img/posts/IoTPart1/DCV.jpeg" style="width:350px;">
+
 
 Then turn the power on, Then put the probe on the pin and the other probe on the metal grid. until we find one of the pins has 3.3V.    
 
@@ -250,7 +251,9 @@ In this case, you will need to use a Hot Air Brushless to remove that solder out
 
 **Hot Air Brushless**
 
-![screenshot_4](/assets/img/posts/IoTPart1/HotAir.jpg)  
+
+<img src="/assets/img/posts/IoTPart1/HotAir.jpg" style="width:350px;">
+  
 
 ## Broken UART
 
