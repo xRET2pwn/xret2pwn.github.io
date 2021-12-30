@@ -202,6 +202,7 @@ So I will connect the RT with the TX, TX with the RX, and GND with the GND. as t
 
 
 <img src="/assets/img/posts/IoTPart1/Connecting.png" style="width:350px;"> 
+<img src="/assets/img/posts/IoTPart1/connected.jpg" style="width:350px;"> 
 
 
 Then connect it to our laptop.  
