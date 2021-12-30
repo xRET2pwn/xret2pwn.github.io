@@ -204,7 +204,7 @@ Then connect it to our laptop.
 
 Okay so now we have done the hardest part, in here feel free you use any tool to communicate with the board.  
 
-**Tools**
+**Tools**  
 
 1. minicom
 2. screen
@@ -214,9 +214,10 @@ Okay so now we have done the hardest part, in here feel free you use any tool to
 6. CoolTerm
 7. Terminator
 
-I would like to use a screen to connect to the serial console, So I'm gonna select my correct host.tty, and correct read bit.  
+I would like to use a screen to connect to the serial console, So I'm gonna select my correct host.tty, and correct read bit.   
 
-```Bash
+
+```bash
 screen /dev/ttyUSB0 115200
 ```
 
