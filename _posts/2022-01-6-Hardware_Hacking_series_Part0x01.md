@@ -50,7 +50,7 @@ In this blog post, I discussed what is the UART and how to find it on the circui
     1. [Multimeter](#multimeter)
     2. [Logic Analyzer](#logic-analyzer)
 3. [Start UART Communication](#start-uart-communication)
-4. [Issue could be faced](#issue-could-be-faced)
+4. [Issues](#issues)
 5. [Conclusion](#conclusion)
 
 # Definitions
@@ -235,7 +235,7 @@ IMAGE_HERE
 
 Easy, right?  
 
-# Issue could be faced
+# Issues
 
 You could face two issues.  
 
