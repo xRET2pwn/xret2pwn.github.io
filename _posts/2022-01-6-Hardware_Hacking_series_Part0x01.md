@@ -70,7 +70,7 @@ In this section, I'm going to define the UART interface, and in the up next blog
 
 UART is so simple consists of 4 pins, used to transmit and receive to communicate through digital pin 0, digital pin 1. And there are two other pins, one for ground (GND) and one for VCC.  
 
->>> Note: UART communicates asynchronously. That means it doesn't require a clock or synchronization of communication.  
+> Note: UART communicates asynchronously. That means it doesn't require a clock or synchronization of communication.  
 
 Here is a sample of How is UART interface looks like   
 
@@ -163,7 +163,7 @@ Let's start by rotating the multimeter switch to DCV, as shown in the image belo
 
 Then turn the power on, Then put the probe on the pin and the other probe on the metal grid. until we find one of the pins has 3.3V.    
 
->>> NOTE: Our board datasheet says VCC must be 3.3V.  
+> NOTE: Our board datasheet says VCC must be 3.3V.  
 
 ![screenshot_4](/assets/img/posts/IoTPart1/VCC.jpeg)   
 
