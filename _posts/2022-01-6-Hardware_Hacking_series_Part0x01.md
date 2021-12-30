@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "UART Hacking Explanation | IoT Hacking Series Part 0x01"
+title: "UART Explanation | IoT Hacking Series Part 0x01"
 featured-img: IoTPart1/Background
 categories: [IoT Security,Hardware Security]
 ---
