@@ -132,9 +132,9 @@ No, you may find more than one.
 3. How should I know the RX, TX, VCC, and GND if it is not identified on the circuit board? 
 Oh, nice one the answer below.  
 
-## Multimeter
+## Multimeter  
 
-**GND**
+**GND**  
 
 1. Metal grid.
 2. USB Port.
@@ -155,7 +155,7 @@ Then put one probe on the pin and the other probe on the metal grid, as in the i
 
 If it beeps, that's mean it is a GND pin. if not, move to other pins.    
 
-**VCC**
+**VCC**  
 
 Let's start by rotating the multimeter switch to DCV, as shown in the image below.     
 
@@ -167,10 +167,14 @@ Then turn the power on, Then put the probe on the pin and the other probe on the
 
 ![screenshot_4](/assets/img/posts/IoTPart1/VCC.jpeg)   
 
-**TX**
-Here is the most confusing part because the voltage of the TX is not stable you may see it going up and down. Why that's happening?     
+**TX**  
+
+Here is the most confusing part because the voltage of the TX is not stable you may see it going up and down. Why that's happening?   
+
 Because when it transmitted data each as logging the voltage will be low. So we can discover that easily in the booting processing.    
+
 So as usual let is put one of the probes on the pin and the other probe on the metal grid.   
+
 
 ![screenshot_4](/assets/img/posts/IoTPart1/TX.GIF)   
 
@@ -218,6 +222,7 @@ screen /dev/ttyUSB0 115200
 
 When you connect to it, turn on the devices.   
 
+
 <IMAGE>
 
 
@@ -251,4 +256,5 @@ For broken UART you can see this part of [Flashback Team](https://youtu.be/01mw0
 I have Introduced a basic way to start communication with embedded devices (IoT) through the UART interface. Then I showed a real case on how to start UART communication. after that I showed two of the issue you may face in the UART interface.   
 
 
+<hr>
 Ciao Ciao!  
