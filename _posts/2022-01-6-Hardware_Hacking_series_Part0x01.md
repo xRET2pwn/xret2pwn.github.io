@@ -226,7 +226,7 @@ screen /dev/ttyUSB0 115200
 When you connect to it, turn on the devices.   
 
 
-IMAGE_HERE
+<img src="/assets/img/posts/IoTPart1/screen.png" style="width:350px;"> 
 
 
 Easy, right?  
