@@ -262,4 +262,4 @@ I have Introduced a basic way to start communication with embedded devices (IoT)
 
 
 <hr>
-Ciao Ciao!  
+Peace out!✌️
