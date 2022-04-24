@@ -105,7 +105,7 @@ OpenProcessToken takes 3 arguments.
 2. DesiredAccess // Access Rights of the Token Handle.
 3. TokenHandle // [OUT] Token Handle variable.
 
-As always we need to check if the opened successfully or not.
+As always we need to check if the is opened successfully or not.
 
 ![3](/assets/img/posts/Access-Token-Part0x01/3.png)
 
