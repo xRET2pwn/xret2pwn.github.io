@@ -67,7 +67,7 @@ Then initialize some variable to use them later.
 ![1](/assets/img/posts/Access-Token-Part0x01/1.png)
 
 
-So, first mission we need to do is to open handle of the target process and that could done through [OpenProcess](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess)
+So, first mission we need to do is to open handle of the target process and that could be done through [OpenProcess](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess)
 
 
 ```CPP
