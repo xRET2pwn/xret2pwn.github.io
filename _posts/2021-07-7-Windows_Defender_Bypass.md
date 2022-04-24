@@ -2,7 +2,7 @@
 layout: post
 title: "How to Bypass Windows Defender"
 featured-img: Bypass_Windows_Defender\background
-categories: [cpp, shellcode, redteam, Windows Defender]
+categories: [C++, Shellcode, Redteam, Windows Defender]
 ---
 
 Hey yo I am back with a new blog post. In this post I am going to talk about how to bypass the windows defender to run your meterpreter reverse shell.
