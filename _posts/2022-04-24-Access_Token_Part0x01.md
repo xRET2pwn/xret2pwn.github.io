@@ -31,19 +31,31 @@ Token Manipulation is used to impersonate another running process token.
 
 So basically we can do that through OpenProcess as **PROCESS_QUERY_LIMITED_INFORMATION**. 
 
----
-**NOTE**
-There is no need to use **PROCESS_ALL_ACCESS.**
----
+<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>Note</b></p>
+<p style='margin-left:1em;'>
+There is no need to use <b>PROCESS_ALL_ACCESS</b>.</p>
+<p style='margin-bottom:1em; margin-right:1em; text-align:right; font-family:Georgia'>
+</p></span>
+</div>
+
+
 
 Then you can pass this Opened handle of target process to OpenProcessToken to open a handle to the Access Token of the process. 
 
 Then duplicate the token of the specified process through DuplicateTokenEx.
 
----
-**NOTE**
+<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>Note</b></p>
+<p style='margin-left:1em;'>
 Here is no need to use **TOKEN_ALL_ACCESS.** You can just pass **MAXIMUM_ALLOWED** to the second member of DuplicatedTokenEx.
----
+<p style='margin-bottom:1em; margin-right:1em; text-align:right; font-family:Georgia'>
+</p></span>
+</div>
 
 Then you can execute whatever you want through passing the stolen handle to CreateProcessWithTokenW.
 
