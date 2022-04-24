@@ -60,7 +60,7 @@ Then you can execute whatever you want through passing the stolen handle to Crea
 
 ### Weaponization
 
-As we are trying to steal token of another process so we need to get that process id. So in the first few lines I just check if the user entered the process id of the target process of not.
+As we are trying to steal token of another process so we need to get that process id. So in the first few lines I just check if the user entered the process id of the target process or not.
 
 Then initialize some variable we are going to use them later.
 
