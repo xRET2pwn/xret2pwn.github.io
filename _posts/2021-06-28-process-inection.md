@@ -2,7 +2,7 @@
 layout: post
 title: "Process Injection without Write/Execute Permission"
 featured-img: Process_Injection\shane-rounce-205187
-categories: [C++, Shellcode, Redteam, Process injection]
+categories: [C/C++, Shellcode, Redteam, Process injection]
 ---
 
 My friend [@joezid](https://joezid.github.io/) and I have had a boring time, so we found we can execute shellcode in a non-executable and write a shellcode in a non-writable.
