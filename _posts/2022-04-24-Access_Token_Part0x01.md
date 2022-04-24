@@ -22,7 +22,7 @@ In up coming posts I will take about how to build token vault to store your toke
 
 How many time you use steal token,  Revert2Self,and Make token in C2 like Cobalt Strike ? Too much, right?! 
 
-In this section I will show you how to write your own Access Token Manipulation in C/CPP.
+In this section I will show you how to write your own Access Token Manipulation in C/C++.
 
 
 ## Short Forward
