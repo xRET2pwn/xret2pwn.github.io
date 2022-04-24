@@ -63,7 +63,7 @@ HANDLE OpenProcess(
 
 OpenProcess takes 3 arguments. 
 
-1. dwDesiredAccess // The access to the process object. Here is a list of Access Right you could use [Process Security and Access Rights - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights) but in our case we can use **PROCESS_ALL_ACCESS** or **PROCESS_QUERY_LIMITED_INFORMATION**, but It’s recommended to use **PROCESS_QUERY_LIMITED_INFORMATION** for less suspicious activity.
+1. dwDesiredAccess // The access to the process object. Here is a list of Access Right you could use [Access Rights](https://docs.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights) but in our case we can use **PROCESS_ALL_ACCESS** or **PROCESS_QUERY_LIMITED_INFORMATION**, but It’s recommended to use **PROCESS_QUERY_LIMITED_INFORMATION** for less suspicious activity.
 2. bInheritHandle // This process inherit the handle
 3. dwProcessId // Process Id of the target process
 
@@ -72,7 +72,7 @@ Then we need to check if the handle opened successfully or not.
 ![2](/assets/img/posts/Access-Token-Part0x01/2.png)
 
 
-After opening the target process handle, we will need to open handle of the process handle and that can be done through [OpenProcessToken function - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken)
+After opening the target process handle, we will need to open handle of the process handle and that can be done through [OpenProcessToken](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken)
 
 ```cpp
 BOOL OpenProcessToken(
@@ -93,7 +93,7 @@ As always we need to check if the opened successfully or not.
 ![3](/assets/img/posts/Access-Token-Part0x01/3.png)
 
 
-Then we will need to duplicate that token handle and that could be done through [DuplicateTokenEx function - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-duplicatetokenex)
+Then we will need to duplicate that token handle and that could be done through [DuplicateTokenEx](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-duplicatetokenex)
 
 ```cpp
 BOOL DuplicateTokenEx(
@@ -111,7 +111,7 @@ DuplicateTokenEx takes 6 arguments
 1. hExistingToken // the returned value of  OpenProcessToken 
 2. dwDesiredAccess // Access Rights
 3. lpTokenAttributes // Attributes of the Token
-4. ImpersonationLevel // Impersonation Level of the token we are going to use [SECURITY_IMPERSONATION_LEVEL - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winnt/ne-winnt-security_impersonation_level)
+4. ImpersonationLevel // Impersonation Level of the token we are going to use [SECURITY_IMPERSONATION_LEVEL](https://docs.microsoft.com/en-us/windows/win32/api/winnt/ne-winnt-security_impersonation_level)
 5. TokenType // Token Type
 6. phNewToken // [OUT] New Token Handle variable.
 
@@ -126,7 +126,7 @@ Okay need we have duplicated token handle, so now we have two options to create 
 
 **First Way**
 
-[CreateProcessWithTokenW function - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprocesswithtokenw) can be used to new process through the stolen token. 
+[CreateProcessWithTokenW](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprocesswithtokenw) can be used to new process through the stolen token. 
 
 CreateProcessWithTokenW takes 9 arguments
 
@@ -148,7 +148,7 @@ BOOL CreateProcessWithTokenW(
 
 **Second Way** 
 
-[ImpersonateLoggedOnUser function - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-impersonateloggedonuser) can be used to impersonate the security context of a logged-on user through token. 
+[ImpersonateLoggedOnUser](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-impersonateloggedonuser) can be used to impersonate the security context of a logged-on user through token. 
 
 ```cpp
 BOOL ImpersonateLoggedOnUser(
@@ -168,7 +168,7 @@ ImpersonateLoggedOnUser takes just the token which the duplicated token.
 
 What if you need to return to your token, what you need to do? 
 
-There is a API that’s called [RevertToSelf function - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-reverttoself) 
+There is a API that’s called [RevertToSelf](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-reverttoself) 
 
 ```cpp
 BOOL RevertToSelf();
@@ -184,7 +184,7 @@ As we trying to make a new token for user, we must have credentials for that use
 
 ![8](/assets/img/posts/Access-Token-Part0x01/8.png)
 
-To login with the user credentials and return token handle, we can done that through [LogonUserA function - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonusera) 
+To login with the user credentials and return token handle, we can done that through [LogonUserA](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonusera) 
 
 ```cpp
 BOOL LogonUserA(
