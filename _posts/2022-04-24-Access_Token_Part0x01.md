@@ -89,7 +89,7 @@ Then we need to check if the handle opened successfully or not.
 ![2](/assets/img/posts/Access-Token-Part0x01/2.png)
 
 
-After opening the target process handle, we will need to open handle of the process handle and that can be done through [OpenProcessToken](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken)
+After opening the target process handle, we will need to open handle of the process handle and that could be done through [OpenProcessToken](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken)
 
 ```cpp
 BOOL OpenProcessToken(
