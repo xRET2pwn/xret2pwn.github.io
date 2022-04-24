@@ -31,13 +31,19 @@ Token Manipulation is used to impersonate another running process token.
 
 So basically we can do that through OpenProcess as **PROCESS_QUERY_LIMITED_INFORMATION**. 
 
->> NOTE: there is no need to use **PROCESS_ALL_ACCESS.**
+---
+**NOTE**
+There is no need to use **PROCESS_ALL_ACCESS.**
+---
 
 Then you can pass this Opened handle of target process to OpenProcessToken to open a handle to the Access Token of the process. 
 
 Then duplicate the token of the specified process through DuplicateTokenEx.
 
->> NOTE: here is no need to use **TOKEN_ALL_ACCESS.** You can just pass **MAXIMUM_ALLOWED** to the second member of DuplicatedTokenEx.
+---
+**NOTE**
+Here is no need to use **TOKEN_ALL_ACCESS.** You can just pass **MAXIMUM_ALLOWED** to the second member of DuplicatedTokenEx.
+---
 
 Then you can execute whatever you want through passing the stolen handle to CreateProcessWithTokenW.
 
