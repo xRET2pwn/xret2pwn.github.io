@@ -31,7 +31,7 @@ Token Manipulation is used to impersonate another running process token.
 
 So basically we can do that through OpenProcess as **PROCESS_QUERY_LIMITED_INFORMATION**. 
 
-<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
+<div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
 <span>
 <p style='margin-top:1em; text-align:center'>
 <b>Note</b></p>
@@ -47,13 +47,12 @@ Then you can pass this Opened handle of target process to OpenProcessToken to op
 
 Then duplicate the token of the specified process through DuplicateTokenEx.
 
-<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
+<div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
 <span>
 <p style='margin-top:1em; text-align:center'>
 <b>Note</b></p>
 <p style='margin-left:1em;'>
 Here is no need to use **TOKEN_ALL_ACCESS.** You can just pass **MAXIMUM_ALLOWED** to the second member of DuplicatedTokenEx.
-<p style='margin-bottom:1em; margin-right:1em; text-align:right; font-family:Georgia'>
 </p></span>
 </div>
 
