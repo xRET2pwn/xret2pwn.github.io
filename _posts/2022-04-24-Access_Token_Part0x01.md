@@ -33,7 +33,7 @@ So basically we can do that through OpenProcess as **PROCESS_QUERY_LIMITED_INFOR
 
 <div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
 <span>
-<p style='margin-top:1em; text-align:center'>
+<p style='margin-top:1em;'>
 <b>Note</b></p>
 <p style='margin-left:1em;'>
 There is no need to use <b>PROCESS_ALL_ACCESS</b>.</p>
@@ -49,7 +49,7 @@ Then duplicate the token of the specified process through DuplicateTokenEx.
 
 <div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
 <span>
-<p style='margin-top:1em; text-align:center'>
+<p style='margin-top:1em;'>
 <b>Note</b></p>
 <p style='margin-left:1em;'>
 Here is no need to use <b>TOKEN_ALL_ACCESS</b>. You can just pass <b>MAXIMUM_ALLOWED</b> to the second member of DuplicatedTokenEx.
