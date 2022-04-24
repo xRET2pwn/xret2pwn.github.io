@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Access Token ManipulationPart 0x01"
+title: "Access Token Manipulation Part 0x01"
 featured-img: Access-Token-Part0x01/background
 categories: [MalwareDev, C/C++]
 ---
