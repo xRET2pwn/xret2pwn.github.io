@@ -52,7 +52,7 @@ Then duplicate the token of the specified process through DuplicateTokenEx.
 <p style='margin-top:1em; text-align:center'>
 <b>Note</b></p>
 <p style='margin-left:1em;'>
-Here is no need to use **TOKEN_ALL_ACCESS.** You can just pass **MAXIMUM_ALLOWED** to the second member of DuplicatedTokenEx.
+Here is no need to use <b>TOKEN_ALL_ACCESS</b>. You can just pass <b>MAXIMUM_ALLOWED</b> to the second member of DuplicatedTokenEx.
 </p></span>
 </div>
 
