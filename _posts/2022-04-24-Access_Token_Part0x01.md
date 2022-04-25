@@ -15,12 +15,12 @@ In this blog post I’m going to show the most three common access token techniq
 2. Revert2Self
 3. Make Token
 
-In up coming posts I will take about how to build token vault to store your tokens.
+In up coming posts I'm gonna talk about how to build token vault to store your tokens.
 
 
 # Access Token Manipulation (Steal Token)
 
-How many time you use steal token,  Revert2Self,and Make token in C2 like Cobalt Strike ? Too much, right?! 
+How many time did you use steal_token,  Revert2Self, and Make_token modules in C2 like Cobalt Strike? Too much, right?! 
 
 In this section I will show you how to write your own Access Token Manipulation in C/C++.
 
@@ -84,7 +84,7 @@ OpenProcess takes 3 arguments.
 2. bInheritHandle // This process inherit the handle
 3. dwProcessId // Process Id of the target process
 
-Then we need to check if the handle opened successfully or not.
+Then we need to check if the handle is opened successfully or not.
 
 ![2](/assets/img/posts/Access-Token-Part0x01/2.png)
 
@@ -105,7 +105,7 @@ OpenProcessToken takes 3 arguments.
 2. DesiredAccess // Access Rights of the Token Handle.
 3. TokenHandle // [OUT] Token Handle variable.
 
-As always we need to check if the is opened successfully or not.
+As always we need to check if the handle is opened successfully or not.
 
 ![3](/assets/img/posts/Access-Token-Part0x01/3.png)
 
@@ -136,7 +136,7 @@ DuplicateTokenEx takes 6 arguments
 ![4](/assets/img/posts/Access-Token-Part0x01/4.png)
 
 
-Okay need we have duplicated token handle, so now we have two options to create a new process through the duplicated token.
+So, now we have the duplicated token handle, so now we have two options to create a new process through the duplicated token.
 
 1. CreateProcessWithTokenW 
 2. ImpersonateLoggedOnUser, and CreateProcessWithLogonW
@@ -173,7 +173,7 @@ BOOL ImpersonateLoggedOnUser(
 );
 ```
 
-ImpersonateLoggedOnUser takes just the token which the duplicated token.
+ImpersonateLoggedOnUser just takes the token which the duplicated token.
 
 ![6](/assets/img/posts/Access-Token-Part0x01/6.png)
 
@@ -183,25 +183,25 @@ ImpersonateLoggedOnUser takes just the token which the duplicated token.
 
 # Revert Impersonation Token (Revert2Self)
 
-What if you need to return to your token, what you need to do? 
+What if you need to return to your primary token, what do you need to do? 
 
-There is a API that’s called [RevertToSelf](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-reverttoself) 
+There is an API that’s called [RevertToSelf](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-reverttoself) 
 
 ```cpp
 BOOL RevertToSelf();
 ```
 
 You just need to call that function with no arguments to revert the token and if the returned value nonzero so you successfully revert the token. 
-And we done : ) looks easy, right?
+And we have done : ) looks easy, right?
 
 
 # Make Token
 
-As we trying to make a new token for user, we must have credentials for that user.
+As we are trying to make a new token for user, we must have the credentials for that user.
 
 ![8](/assets/img/posts/Access-Token-Part0x01/8.png)
 
-To login with the user credentials and return token handle, we can done that through [LogonUserA](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonusera) 
+To login with the user credentials and return the token handle, we can do that through [LogonUserA](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonusera) 
 
 ```cpp
 BOOL LogonUserA(
@@ -225,13 +225,13 @@ LogonUserA takes 6 arguments
 
 ![9](/assets/img/posts/Access-Token-Part0x01/9.png)
 
-After returning the user token handle you can use ImpersonateLoggendOnUser as we did in steal Token.
+After returning the user token handle you can use ImpersonateLoggendOnUser as we did in Steal Token section.
 
 
 ![10](/assets/img/posts/Access-Token-Part0x01/10.png)
 
 
-Definitely you can use direct System calls to bypass any userland hooks. that could be done through https://github.com/klezVirus/SysWhispers3 or you can Implement your own Syscall. and if you re-wrote this in CSharp you can use [DInvoke/DInvoke.DynamicInvoke at master · rasta-mouse/DInvoke](https://github.com/rasta-mouse/DInvoke/tree/master/DInvoke.DynamicInvoke) 
+Definitely you can use direct System calls to bypass any userland hooks. that could be done through [SysWhispers3](https://github.com/klezVirus/SysWhispers3) or you can Implement your own Syscall. and if you re-write this in CSharp you can use [DInvoke/DInvoke.DynamicInvoke at master · rasta-mouse/DInvoke](https://github.com/rasta-mouse/DInvoke/tree/master/DInvoke.DynamicInvoke) 
 
 
 
