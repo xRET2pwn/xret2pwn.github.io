@@ -260,6 +260,9 @@ The next step is to compile -> run -> see what will happen.
 Yup, we injected our shellcode successfully without writable/executable allocation.  
 
 
+# UPDATE
+
+After discussion, I found that `WriteProcessMemory` by default change the memory allocate to (RWX).
 
 _________________________  
   
