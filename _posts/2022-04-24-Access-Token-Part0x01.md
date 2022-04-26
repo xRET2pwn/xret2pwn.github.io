@@ -9,13 +9,13 @@ categories: [MalwareDev, C/C++]
 
 # Introduction
 
-In this blog post I'm going to show the most three common access token techniques.
+In this blog post, I'm going to show the most three common access token techniques.
 
 1. Steal Token
 2. Revert2Self
 3. Make Token
 
-In up coming posts I'm gonna talk about how to build token vault to store your tokens.
+In upcoming posts I'm gonna talk about how to build a token vault to store your tokens.
 
 
 # Access Token Manipulation (Steal Token)
@@ -43,7 +43,7 @@ There is no need to use <b>PROCESS_ALL_ACCESS</b>.</p>
 
 
 
-Then you can pass this Opened handle of target process to OpenProcessToken to open a handle to the Access Token of the process. 
+Then you can pass this Opened handle of the target process to OpenProcessToken to open a handle to the Access Token of the process. 
 
 Then duplicate the token of the specified process through DuplicateTokenEx.
 
@@ -56,7 +56,7 @@ Here is no need to use <b>TOKEN_ALL_ACCESS</b>. You can just pass <b>MAXIMUM_ALL
 </p></span>
 </div>
 
-Then you can execute whatever you want through passing the stolen handle to CreateProcessWithTokenW.
+Then you can execute whatever you want by passing the stolen handle to CreateProcessWithTokenW.
 
 ### Weaponization
 
@@ -191,17 +191,17 @@ There is an API that's called [RevertToSelf](https://docs.microsoft.com/en-us/wi
 BOOL RevertToSelf();
 ```
 
-You just need to call that function with no arguments to revert the token and if the returned value nonzero so you successfully revert the token. 
+You just need to call that function with no arguments to revert the token and if the returned value is nonzero so you successfully revert the token. 
 And we have done : ) looks easy, right?
 
 
 # Make Token
 
-As we are trying to make a new token for user, we must have the credentials for that user.
+As we are trying to make a new token for the user, we must have the credentials for that user.
 
 ![8](/assets/img/posts/Access-Token-Part0x01/8.png)
 
-To login with the user credentials and return the token handle, we can do that through [LogonUserA](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonusera) 
+To log in with the user credentials and return the token handle, we can do that through [LogonUserA](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonusera) 
 
 ```cpp
 BOOL LogonUserA(
@@ -225,13 +225,13 @@ LogonUserA takes 6 arguments
 
 ![9](/assets/img/posts/Access-Token-Part0x01/9.png)
 
-After returning the user token handle you can use ImpersonateLoggendOnUser as we did in Steal Token section.
+After returning the user token handle you can use ImpersonateLoggendOnUser as we did in the Steal Token section.
 
 
 ![10](/assets/img/posts/Access-Token-Part0x01/10.png)
 
 
-Definitely you can use direct System calls to bypass any userland hooks. that could be done through [SysWhispers3](https://github.com/klezVirus/SysWhispers3) or you can Implement your own Syscall. and if you re-write this in CSharp you can use [DInvoke/DInvoke.DynamicInvoke at master . rasta-mouse/DInvoke](https://github.com/rasta-mouse/DInvoke/tree/master/DInvoke.DynamicInvoke) 
+You can use direct System calls to bypass any userland hooks. that could be done through [SysWhispers3](https://github.com/klezVirus/SysWhispers3) or you can Implement your own Syscall. and if you re-write this in CSharp you can use [DInvoke/DInvoke.DynamicInvoke at master . rasta-mouse/DInvoke](https://github.com/rasta-mouse/DInvoke/tree/master/DInvoke.DynamicInvoke)
 
 
 

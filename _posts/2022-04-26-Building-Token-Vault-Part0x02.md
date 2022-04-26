@@ -37,11 +37,11 @@ A: No, many C2s are using that technique. Ref: [Metasploit Meterpreter Payload](
 
 # Weaponization
 
-If you remember in the part 1 we build MakeToken, Stealtoken, and Revert2Self functions.
+If you remember in part 1 we build MakeToken, Stealtoken, and Revert2Self functions.
 ![1](/assets/img/posts/Building-Token-Vault-Part0x01/1.png)
 
-So, in this blog we are going to build three other function first for adding token, second one for list token, and last one UseToken to reuse token in token vault. So, Let's get start in building our header file.
-Simply we create linked list to store our data into it.
+So, in this blog, we are going to build three other functions first for adding a token, the second one for listing tokens, and the last one UseToken to reuse tokens in a token vault. So, Let's get a start in building our header file.
+Simply we create a linked list to store our data into it.
 
 ![2](/assets/img/posts/Building-Token-Vault-Part0x01/2.png)
 
@@ -96,17 +96,17 @@ That's how we can create a Token Vault.
 
 ## ListToken
 
-In ListToken function we will need to create just one more pointer, that pointer will hold the HeaderPtr data and do a simple loop to extract the whole token.
+In the ListToken function we will need to create just one more pointer, that pointer will hold the HeaderPtr data and do a simple loop to extract the whole token.
 
 ![7](/assets/img/posts/Building-Token-Vault-Part0x01/7.png)
 
-In the above screenshot we just check if the HeaderPtr is empty or not.
+In the above screenshot, we just check if the HeaderPtr is empty or not.
 
 If not we are going to that loop. 
 
 ![8](/assets/img/posts/Building-Token-Vault-Part0x01/8.png)
 
-As you see at the end of the loop we move to other node by 
+As you see at the end of the loop we move to another node by 
 
 ```cpp
 CurrentNode = CurrentNode->Next;
@@ -114,10 +114,10 @@ CurrentNode = CurrentNode->Next;
 ## UseToken
 
 So, now what if you need to use one of these stored tokens.
-It's so simple you can do like we did in ListToken function.
+It's so simple you can do like we did in the ListToken function.
 1. Check if the Token Vault isn't NULL.
-2. Create new Node.
-3. Loop until you find that given index equal the CurrentNode->TokenIndex.
+2. Create a new Node.
+3. Loop until you find that the given index equals the CurrentNode->TokenIndex.
 4. Use ImpersonateLoggedOnUser.
 
 ![9](/assets/img/posts/Building-Token-Vault-Part0x01/9.png)
@@ -125,7 +125,7 @@ It's so simple you can do like we did in ListToken function.
 
 ## Determine the owner of a process
 
-How to determine the owner of a process to store it with the token in token vault?
+How do determine the owner of a process to store the token in a token vault?
 
 You can call [GetTokenInformation](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-gettokeninformation?redirectedfrom=MSDN) function. by passing the Token Handle of that process. and for TokenInformationClass member you can pass `TokenOwner` to retrieve SID of the user. 
 And to convert the SID to the actual user account you can use [LookupAccountSidA](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountsida?redirectedfrom=MSDN)
@@ -152,7 +152,7 @@ And here is how could you use these APIs.
 
 <hr>
 
-If you have feedback please go ahead and DM me on Twitter, See you in the next blogpost.
+If you have feedback please go ahead and DM me on Twitter, See you in the next blog post.
 
 
 Peace out!✌️
