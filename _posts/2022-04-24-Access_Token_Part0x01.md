@@ -9,7 +9,7 @@ categories: [MalwareDev, C/C++]
 
 # Introduction
 
-In this blog post I’m going to show the most three common access token techniques.
+In this blog post I'm going to show the most three common access token techniques.
 
 1. Steal Token
 2. Revert2Self
@@ -80,7 +80,7 @@ HANDLE OpenProcess(
 
 OpenProcess takes 3 arguments. 
 
-1. dwDesiredAccess // The access to the process object. Here is a list of Access Right you could use [Access Rights](https://docs.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights) but in our case we can use **PROCESS_ALL_ACCESS** or **PROCESS_QUERY_LIMITED_INFORMATION**, but It’s recommended to use **PROCESS_QUERY_LIMITED_INFORMATION** for less suspicious activity.
+1. dwDesiredAccess // The access to the process object. Here is a list of Access Right you could use [Access Rights](https://docs.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights) but in our case we can use **PROCESS_ALL_ACCESS** or **PROCESS_QUERY_LIMITED_INFORMATION**, but It's recommended to use **PROCESS_QUERY_LIMITED_INFORMATION** for less suspicious activity.
 2. bInheritHandle // This process inherit the handle
 3. dwProcessId // Process Id of the target process
 
@@ -185,7 +185,7 @@ ImpersonateLoggedOnUser just takes the token which the duplicated token.
 
 What if you need to return to your primary token, what do you need to do? 
 
-There is an API that’s called [RevertToSelf](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-reverttoself) 
+There is an API that's called [RevertToSelf](https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-reverttoself) 
 
 ```cpp
 BOOL RevertToSelf();
@@ -218,7 +218,7 @@ LogonUserA takes 6 arguments
 
 1. lpszUsername // The username value. actually you can set UPN format but if you did that you must NULL the domain value.
 2. lpszDomain // Domain Name.
-3. lpszPassword // User’s Password.
+3. lpszPassword // User's Password.
 4. dwLogonType // The type of logon operation to perform
 5. dwLogonProvider // Specifies the logon provider
 6. phToken // [OUT] Token Handle variable.
@@ -231,7 +231,7 @@ After returning the user token handle you can use ImpersonateLoggendOnUser as we
 ![10](/assets/img/posts/Access-Token-Part0x01/10.png)
 
 
-Definitely you can use direct System calls to bypass any userland hooks. that could be done through [SysWhispers3](https://github.com/klezVirus/SysWhispers3) or you can Implement your own Syscall. and if you re-write this in CSharp you can use [DInvoke/DInvoke.DynamicInvoke at master · rasta-mouse/DInvoke](https://github.com/rasta-mouse/DInvoke/tree/master/DInvoke.DynamicInvoke) 
+Definitely you can use direct System calls to bypass any userland hooks. that could be done through [SysWhispers3](https://github.com/klezVirus/SysWhispers3) or you can Implement your own Syscall. and if you re-write this in CSharp you can use [DInvoke/DInvoke.DynamicInvoke at master . rasta-mouse/DInvoke](https://github.com/rasta-mouse/DInvoke/tree/master/DInvoke.DynamicInvoke) 
 
 
 
