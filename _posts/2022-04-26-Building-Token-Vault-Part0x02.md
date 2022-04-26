@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building Token Vault Part 0x02"
+title: "Access Token Manipulation Part 0x02"
 featured-img: Building-Token-Vault-Part0x01/background
 categories: [MalwareDev, C/C++]
 ---
@@ -37,7 +37,7 @@ A: No, many C2s are using that technique. Ref: [Metasploit Meterpreter Payload](
 
 # Weaponization
 
-If you remember in part 1 we build MakeToken, Stealtoken, and Revert2Self functions.
+If you remember in part 1 we built MakeToken, Stealtoken, and Revert2Self functions.
 ![1](/assets/img/posts/Building-Token-Vault-Part0x01/1.png)
 
 So, in this blog, we are going to build three other functions first for adding a token, the second one for listing tokens, and the last one UseToken to reuse tokens in a token vault. So, Let's get a start in building our header file.
