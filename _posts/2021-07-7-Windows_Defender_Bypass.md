@@ -5,7 +5,7 @@ featured-img: Bypass_Windows_Defender\background
 categories: [C/C++, Shellcode, Redteam, Windows Defender]
 ---
 
-Hey yo I am back with a new blog post. In this post I am going to talk about how to bypass the --windows defender to run your meterpreter reverse shell--, Sorry I was wrong In this point After more research I found most of all AV/EDRs are taking signature in each line of meterpreter source code, so one of the harders things you can do is injecting a meterpreter shellcode but definitely if you using a Cobalt Strike, or if you are using any another C2, When I mean another C2 I mean uncommon one to be less detected by itself.
+Hey yo I am back with a new blog post. In this post I am going to talk about how to bypass the <del>windows defender to run your meterpreter reverse shell</del>, Sorry I was wrong In this point After more research I found most of all AV/EDRs are taking signature in each line of meterpreter source code, so one of the harders things you can do is injecting a meterpreter shellcode but definitely if you using a Cobalt Strike, or if you are using any another C2, When I mean another C2 I mean uncommon one to be less detected by itself.
 
 
 # SUMMARY
