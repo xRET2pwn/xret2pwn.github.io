@@ -13,7 +13,7 @@ This is part 2 of Access Token Manipulation blog. In this blog post I'm gonna ta
 
 If you are building a C2 and you need to implement token vault into your C2 you may ask yourself what I need to store in the token vault?
 For sure you will need to store the token, Process ID of that token, TokenIndex, Domain Name,and who is the owner of that process. that's it.
-So, Now we know what we need to store into token vault. Let's answer how to store it? 
+So, Now we know what we need to store into token vault. Let's answer how to store them? 
 
 Actually you can do a Linked List that contains your data for example:
 
@@ -57,7 +57,7 @@ And lastly we have pointer that point to the next node.
 
 Then we defined our Token Header Ptr. Why is it NULL? because if it NULL that means the Token vault is empty.
 
-and lastly we have defined a prototype of our two functions.
+and lastly we have defined a prototype of our three functions.
 
 ## InsertToken
 
