@@ -309,7 +309,7 @@ int main()
 
 > NOTE: Buffer_Max_Size you will need to define it by adding the following:  `#define BUFFER_MAX_SIZE 1024 * 1024`
 
-
+If you noticed we have opened the named pipe through `CreateNamedPipe` WinAPI function. this function is well documented by [Microsoft](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createnamedpipea), but for a quick view we just made our pipe `PIPE_ACCESS_DUPLEX` that means the third-party client can read and write into it. and made just accept one connection you can notice that in the arguement number 4.
 
 
 ### Write Function
