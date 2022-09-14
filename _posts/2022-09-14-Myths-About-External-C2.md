@@ -14,30 +14,30 @@ Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree
 
 # Table of Content
 
-1. What is the External C2?
-	1. Is it useful?
-2. Understand named pipe
-	1. What is the Named Pipe?
-	2. Types of Pipes
-	3. How it works?
-3. Build a Basic Demo
-	1. Demo Structure
-    2. Teamserver
-    3. Third-Party Server
-    4. Named Pipe communication
-        1. Named Pipe Server
-        2. Named Pipe Client
-    5. How is the Agent looks like?
-        1. Create Named pipe
-        2. Write Function
-        3. Read Function
-    6. Build our third-party client
-        1. Sockets
-        2. Send Socket Function
-        3. Receive Socket Fucntion
-        4. Open Named pipe handle
-        5. Pipe Write/Read Function
-    7. Execution
+1. [What is the External C2?](#what-is-the-external-c2)
+	1. [Is it useful?](#is-it-useful)
+2. [Understand named pipe]()
+	1. [What is the Named Pipe?]()
+	2. [Types of Pipes]()
+	3. [How it works?]()
+3. [Build a Basic Demo]()
+	1. [Demo Structure]()
+    2. [Teamserver]()
+    3. [Third-Party Server]()
+    4. [Named Pipe communication]()
+        1. [Named Pipe Server]()
+        2. [Named Pipe Client]()
+    5. [How is the Agent looks like?]()
+        1. [Create Named pipe]()
+        2. [Write Function]()
+        3. [Read Function]()
+    6. [Build our third-party client]()
+        1. [Sockets]()
+        2. [Send Socket Function]()
+        3. [Receive Socket Fucntion]()
+        4. [Open Named pipe handle]()
+        5. [Pipe Write/Read Function]()
+    7. [Execution]
 
 # What is the External C2?
 
