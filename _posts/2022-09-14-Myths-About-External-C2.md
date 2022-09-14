@@ -259,3 +259,117 @@ Its so simple all we need to do is:
 
 ## How is the Agent looks like?
 For sure when our agent start execution will create our named pipe. Then will wait until someone connect to it to start reading and writing data into the pipe.  
+### Create Named pipe 
+Here is Example on main function.
+```cpp
+
+int main()
+{
+
+    HANDLE hPipe;
+    char *buf = ( char* )malloc( BUFFER_MAX_SIZE );
+    DWORD dwRead;
+
+
+    hPipe = CreateNamedPipe( TEXT( "\\\\.\\pipe\\ExternalC2Myths" ),
+        PIPE_ACCESS_DUPLEX,
+        PIPE_TYPE_BYTE | PIPE_READMODE_BYTE | PIPE_WAIT,  
+        1,
+        1024 * 16,
+        1024 * 16,
+        NMPWAIT_USE_DEFAULT_WAIT,
+        NULL );
+
+    
+    while ( hPipe != INVALID_HANDLE_VALUE )
+    {
+        printf( "[+] Named pipe successfully created.\n" );
+        if ( ConnectNamedPipe(hPipe, NULL) != FALSE )   
+        {
+            printf( "[+] Third-Party client successfully connected.\n" );
+            
+            while ( TRUE )
+            {
+                printf( "===================================\n" );
+
+                dwRead = ReadData( hPipe, buf );
+                printf( "[*] Reading Data: %s\n", buf );
+
+
+                printf( "[*] Writing Data.\n" );
+                WriteData( hPipe, buf, dwRead + 1 );
+            }
+        }
+
+    }
+    DisconnectNamedPipe( hPipe );
+    return 0;
+}
+```
+
+> NOTE: Buffer_Max_Size you will need to define it by adding the following:  `#define BUFFER_MAX_SIZE 1024 * 1024`
+
+
+
+
+### Write Function
+
+The write function will take 3 arguments:
+1. The handle of the named pipe.
+2. Data to write.
+3. Data length.
+
+And its like TCP sockets we will need to add our data size before the data to make sure the client and sever side will read all the data.
+
+So our function should be like that
+```C++
+void WriteData( HANDLE hNamedPipe, char* DATA, DWORD DataLength ) {
+
+    DWORD wrote = 0;
+
+    WriteFile(hNamedPipe, (void*)&DataLength, 4, &wrote, 0);
+    FlushFileBuffers(hNamedPipe);
+
+    WriteFile(hNamedPipe, DATA, DataLength, &wrote, 0);
+    FlushFileBuffers(hNamedPipe);
+
+    printf("[*] Wrote Data: %s ,Data Size: %i\n", DATA, wrote);
+
+}
+```
+
+
+### Read Function
+
+The read function will take 2 arguments:
+1. The handle of the named pipe.
+2. pointer to data variable
+
+And as we did in write function we just wrote the first 4 bytes with the size of the next data.
+we will need to get the 4 for bytes to know the exact data we need to read. and that could be done through the following code sample:
+```c++
+DWORD ReadData( HANDLE hNamedPipe, char* DATA ) {
+    DWORD  temp = 0;
+
+    int size = 0, total = 0;
+
+    ReadFile( hNamedPipe, (char*)&size, 4, &temp, 0 );
+
+    printf( "[*] Reading Data Size: %i\n", size );
+
+
+    while ( size > total ) {
+
+        ReadFile( hNamedPipe, DATA + total , size - total, &temp, 0 );
+        total += temp;
+        printf( "[*] Data: %s\n", DATA );
+        printf( "[*] Total : %i\n", total );
+        printf( "[*] Size : %i\n", size );
+
+    }
+
+    return size;
+}
+```
+
+That's how our agent looks like.
