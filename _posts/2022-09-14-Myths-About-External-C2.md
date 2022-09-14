@@ -5,7 +5,6 @@ featured-img: Myths-About-External-C2/background
 categories: [MalwareDev, C/cpp]
 ---
 
-# Introduction
 
 In this blog post I will show you how to build a External C2 in your C2. Excuse me I can not show any actual code in my C2 Framework (Falcon One).
 
