@@ -141,7 +141,7 @@ def recv_msg(sock):
 
 
 def recvall(sock, n):
-    # Helper function to recv n bytes or return None if EOF is hit
+
     data = bytearray()
     while len(data) < n:
         packet = sock.recv(n - len(data))
@@ -203,7 +203,7 @@ def recv_msg(sock):
 
 
 def recvall(sock, n):
-    # Helper function to recv n bytes or return None if EOF is hit
+
     data = bytearray()
     while len(data) < n:
         packet = sock.recv(n - len(data))
@@ -228,10 +228,34 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
 
                 print("[+] Receiving Data: %s" % data)
 
-                send_msg(conn,data)  # NEED TO CHANGE IT TO LITTLE ENDAN 
+                send_msg(conn,data)  
                 data = recv_msg(conn)
                 
                 print("[+] Receiving Data: %s" % data)
 
                 send_msg(teamserver_connector,data)
 ```
+
+## Named Pipe Communectation
+So, Now we have both teamserver and third-party server. So, what else we need to do?
+We need to implement the named pipe creation, write ,and read functions in the agent(Payload/Implant/Beacon), then write our third-party client functions.
+
+>> Just For Clarify: Cobalt Strike or any other C2s has a Shellcode generator feature, to generate a shellcode for your agent. What that means?  That means they can just allocate a virtual memory space to inject the shellcode when the third-party client begin starting then continue the third-party normal actions like listening to the named pipe to send and receive the data. But in our case I will not generate a shellcode for the agent I will run separately.
+
+
+### Named Pipe Server 
+
+If you remember when we spoke about Windows Pipes. You can interact with it like a file object.
+So all we need to do is:
+1. Create our named pipe.
+2. wait for a client process to connect.
+3. Read and Write into through the Named pipe handle.
+
+### Named Pipe Client
+
+Its so simple all we need to do is:
+1. Open handle for our Named Pipe like any file by using CreateFileA.
+2. Read and Write into our Named pipe handle.
+
+## How is the Agent looks like?
+For sure when our agent start execution will create our named pipe. Then will wait until someone connect to it to start reading and writing data into the pipe.  
