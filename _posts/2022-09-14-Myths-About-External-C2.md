@@ -8,7 +8,8 @@ categories: [MalwareDev, C/cpp]
 
 In this blog post I will show you how to build a External C2 in your C2. Excuse me I can not show any actual code in my C2 Framework (Falcon One).
 
-Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Implement%20External%20C2%20Feature%20in%20your%20C2%20like%20Cobalt%20Strike), Do not continue. 
+Here is the final code.
+[Blogposts-Tools/Implement External C2 Feature in your C2 like Cobalt Strike at main · xRET2pwn/Blogposts-Tools](https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Implement%20External%20C2%20Feature%20in%20your%20C2%20like%20Cobalt%20Strike)
 
 
 # Table of Content
