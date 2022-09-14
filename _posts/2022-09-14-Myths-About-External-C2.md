@@ -539,6 +539,9 @@ The Execution flow should be like that.
 ![6](/assets/img/posts/Myths-About-External-C2/6.png)  
 
 
+
+Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Implement%20External%20C2%20Feature%20in%20your%20C2%20like%20Cobalt%20Strike), Thank you for reading.
+
 <hr>
 
 If you have feedback please go ahead and DM me on Twitter, See you in the next blogpost.
