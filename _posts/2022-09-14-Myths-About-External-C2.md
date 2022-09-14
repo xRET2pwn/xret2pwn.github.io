@@ -98,3 +98,15 @@ In Duplex the client side can write data to the server and the server write to t
 So, now you have a good base knowledge to start building the demo. 
 
 ## Demo Structure
+
+
+I'm going to build a python script to emulate the teamserver that python script will open a localhost TCP connection. Then we will build a third-party server that takes Tasks (Commands) and send it to the third-party client which should be in the target machine and send back the task results back to the third-party server.   
+So, the final flow will be like following: 
+1. Teamserver opens a localhost TCP connection.
+2. Third-party server will take the tasks from the teamserver and send to the client, and receive the task results from to thrid-party client to send it back to the teamserver.
+3. Third-party client will take the tasks from the third-party and send it to the agent process via named pipe and receive the task results via named pipe and send it back to the third-party server.   
+
+> In this structure we didn't use any custom channel like dropbox, Because this is just for a demonstration but you can build that between the Third-party connectors (server and client). And figure these connectors to send and receive the tasks and task results via that custom channel (Dropbox, Slack, etc.)  
+
+
+
