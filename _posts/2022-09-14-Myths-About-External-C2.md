@@ -338,6 +338,7 @@ void WriteData( HANDLE hNamedPipe, char* DATA, DWORD DataLength ) {
 }
 ```
 
+> NOTE: make sure that you do FlushFileBuffers after writing the data to make sure that you wrote all you need to write.
 
 ### Read Function
 
