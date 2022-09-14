@@ -49,6 +49,10 @@ As you see in the above flow, in the Attacker Machine we found the teamserver, a
 
 And in the Target Machine we can found Third-Party client and the Main Agent. In the normal case the thrid-party should locate a memory space to inject the shellcode of the agent into it and execute the agent, but in our case I will run the agent manully. when the agent start running it'll create a named pipe to send and receive the data with the third-party client. and the main goal of the third-party is take the new tasks (commands) from the Dropbox and send it to the agent process through named pipe and receive the task results and send it back to the dropbox.
 
+
+Anthor graph could be more clearn made by MDSec  
+![2](/assets/img/posts/Myths-About-External-C2/2.png)  
+
 ## Is it useful? 
 
 I will let you answer this question by yourself.  
