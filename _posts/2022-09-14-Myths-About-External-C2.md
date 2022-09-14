@@ -31,7 +31,7 @@ Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree
         1. Create Named pipe
         2. Write Function
         3. Read Function
-    6. Third-Party Client
+    6. Build our third-party client
         1. Sockets
         2. Send Socket Function
         3. Receive Socket Fucntion
@@ -259,6 +259,7 @@ Its so simple all we need to do is:
 
 ## How is the Agent looks like?
 For sure when our agent start execution will create our named pipe. Then will wait until someone connect to it to start reading and writing data into the pipe.  
+
 ### Create Named pipe 
 Here is Example on main function.
 ```cpp
@@ -379,6 +380,8 @@ That's how our agent looks like.
 
 This client should be mix of the agent and the third-party server, because we will need to connect to the TCP server to receive the command and write it into the named pipe then wait until the agent execute the command and write again the data into the pipe then our client will read the data and send it back to the TCP server, then the TCP server will send the data to the teamserver. 
 
+### Sockets
+
 So, I have created function called connect to connect to the TCP server. 
 ```C++
 
@@ -425,7 +428,7 @@ SOCKET Connect(string ipAddress, int port) {
 This function will return the opened socket handle to be able to send and receive message later.  
 and here is our send and receive functions.  
 
-### Send TCP Function
+#### Send TCP Function
 ```C++
 int SendData( SOCKET sock, char* DATA, DWORD DataLength ) {
     send (sock, (char*)&DataLength , 4, 0 );
@@ -435,7 +438,7 @@ int SendData( SOCKET sock, char* DATA, DWORD DataLength ) {
 }
 
 ```
-### Receive TCP Function
+#### Receive TCP Function
 ```C++
 int RecData(SOCKET sock, char *DATA) {
 
@@ -455,3 +458,10 @@ int RecData(SOCKET sock, char *DATA) {
 }
 ```
 
+### Open Named pipe handle
+
+
+### Pipe Write/Read Function
+
+
+## Execution
