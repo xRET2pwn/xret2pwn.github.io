@@ -9,6 +9,8 @@ categories: [MalwareDev, C/C++]
 
 In this blog post I will show you how to build a External C2 in your C2. Excuse me I can not show any actual code in my C2 Framework (Falcon One).
 
+Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Implement%20External%20C2%20Feature%20in%20your%20C2%20like%20Cobalt%20Strike), Do not continue. 
+
 
 # Table of Content
 
@@ -91,3 +93,8 @@ Named pipes has two methods of communication. `half-duplex` and `duplex`.
 Half-duplex will let the client side write data to the server with no repsond.  
 In Duplex the client side can write data to the server and the server write to the client.  
 
+# Build a Basic Demo
+
+So, now you have a good base knowledge to start building the demo. 
+
+## Demo Structure
