@@ -18,13 +18,13 @@ Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree
 	1. [Is it useful?](#is-it-useful)
 2. [Understand named pipe](#understand-named-pipe)
 	1. [What is the Named Pipe?](#what-is-the-named-pipe)
-	2. [Types of Pipes](#types-of-pipes)
+	2. [Types of Windows Pipes](#types-of-windows-pipes)
 	3. [How it works?](#how-it-works)
-3. [Build a Basic Demo](#build-a-basic-Demo)
+3. [Build a Basic Demo](#build-a-basic-demo)
 	1. [Demo Structure](#demo-structure)
     2. [Teamserver](#teamserver)
     3. [Third-Party Server](#third-party-server)
-    4. [Named Pipe communication](#named-pipe-communication)
+    4. [Named Pipe Communication](#named-pipe-communication)
         1. [Named Pipe Server](#named-pipe-server)
         2. [Named Pipe Client](#named-pipe-client)
     5. [How is the Agent looks like?](#how-is-the-agent-looks-like)
@@ -33,8 +33,8 @@ Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree
         3. [Read Function](#read-function)
     6. [Build our third-party client](#build-our-third-party-client)
         1. [Sockets](#sockets)
-        2. [Send Socket Function](#send-socket-function)
-        3. [Receive Socket Fucntion](#receive-socket-fucntion)
+        2. [Send TCP Function](#send-tcp-function)
+        3. [Receive TCP Function](#receive-tcp-function)
         4. [Open Named pipe handle](#open-named-pipe-handle)
         5. [Pipe Write/Read Function](#pipe-writeread-function)
     7. [Execution](#execution)
@@ -236,7 +236,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
                 send_msg(teamserver_connector,data)
 ```
 
-## Named Pipe Communectation
+## Named Pipe Communication
 So, Now we have both teamserver and third-party server. So, what else we need to do?
 We need to implement the named pipe creation, write ,and read functions in the agent(Payload/Implant/Beacon), then write our third-party client functions.
 
