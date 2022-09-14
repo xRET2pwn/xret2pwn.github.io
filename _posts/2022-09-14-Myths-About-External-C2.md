@@ -320,7 +320,7 @@ The write function will take 3 arguments:
 2. Data to write.
 3. Data length.
 
-And its like TCP sockets we will need to add our data size before the data to make sure the client and sever side will read all the data.
+And its like TCP sockets we will need to add our data size before the data to makesure the client and sever side will read all the data.
 
 So our function should be like that
 ```C++
@@ -339,7 +339,7 @@ void WriteData( HANDLE hNamedPipe, char* DATA, DWORD DataLength ) {
 }
 ```
 
-> NOTE: make sure that you do FlushFileBuffers after writing the data to make sure that you wrote all you need to write.
+> NOTE: Makesure that you do FlushFileBuffers after writing the data to makesure that you wrote all you need to write.
 
 ### Read Function
 
@@ -460,10 +460,63 @@ int RecData(SOCKET sock, char *DATA) {
 
 ### Open Named pipe handle
 
+Opening Named pipe handle is like opening a file could be done through `CreateFileA` WinAPI.
+
+```C++
+HANDLE hNamedPipe =  INVALID_HANDLE_VALUE;
+while ( hNamedPipe == INVALID_HANDLE_VALUE )
+{ 
+    hNamedPipe = CreateFileA( "\\\\.\\pipe\\ExternalC2Myths", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, SECURITY_SQOS_PRESENT | SECURITY_ANONYMOUS, NULL );
+}
+```
+
+You can notice the while loop, because the third-party may try to open handle for the named pipe before the agent create the pipe. 
+
 
 ### Pipe Write/Read Function
 
+**Write Function**
+```C++
+void WriteData( HANDLE hNamedPipe, char* DATA, DWORD DataLength ) {
 
+    DWORD wrote = 0;
+
+    WriteFile( hNamedPipe, ( void* )&DataLength, 4, &wrote, 0 );
+    FlushFileBuffers(hNamedPipe);
+
+    WriteFile( hNamedPipe, DATA, DataLength, &wrote, 0 );
+    FlushFileBuffers(hNamedPipe);
+    
+    printf( "[*] Wrote Data: %s ,Data Size: %i\n", DATA, wrote);
+
+}
+```
+**Read Function**
+```C++
+DWORD ReadData( HANDLE hNamedPipe, char* DATA ) {
+    
+    DWORD  temp = 0;
+
+    int size = 0, total = 0;
+
+    ReadFile(hNamedPipe, (char*)&size, 4, &temp, 0);
+
+    printf("[*] Reading Data Size: %i\n", size);
+
+
+    while (size > total) {
+
+        ReadFile(hNamedPipe, DATA + total, size - total, &temp, 0);
+        total += temp;
+        printf("[*] Data: %s\n", DATA);
+        printf("[*] Total : %i\n", total);
+        printf("[*] Size : %i\n", size);
+
+    }
+
+    return size;
+}
+```
 ## Execution
 
 The Execution flow should be like that.
