@@ -465,3 +465,33 @@ int RecData(SOCKET sock, char *DATA) {
 
 
 ## Execution
+
+The Execution flow should be like that.
+
+1. Teamserver (To open the localhost TCP Connection).
+2. Third-party Server (To open a TCP Connection between the third-party client and connect to the teamserver).
+3. Agent (To create the named pipe).
+4. Third-party Client (To connect to the third-party TCP connection and open handle to the named pipe).
+
+**Teamserver**
+![3](/assets/img/posts/Myths-About-External-C2/3.png)
+
+**Third-party Server**
+![4](/assets/img/posts/Myths-About-External-C2/4.png)
+
+**Agent**
+![5](/assets/img/posts/Myths-About-External-C2/5.png)
+
+**Third-party Client**
+![6](/assets/img/posts/Myths-About-External-C2/6.png)
+
+
+<hr>
+
+If you have feedback please go ahead and DM me on Twitter, See you in the next blogpost.
+
+
+
+  
+
+<a href="https://www.buymeacoffee.com/ret2pwn" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
