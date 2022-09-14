@@ -2,7 +2,7 @@
 layout: post
 title: "Myths About External C2"
 featured-img: Myths-About-External-C2/background
-categories: [MalwareDev, C/C++]
+categories: [MalwareDev, C/cpp]
 ---
 
 # Introduction
@@ -323,7 +323,7 @@ The write function will take 3 arguments:
 And its like TCP sockets we will need to add our data size before the data to makesure the client and sever side will read all the data.
 
 So our function should be like that
-```C++
+```cpp
 void WriteData( HANDLE hNamedPipe, char* DATA, DWORD DataLength ) {
 
     DWORD wrote = 0;
@@ -383,7 +383,7 @@ This client should be mix of the agent and the third-party server, because we wi
 ### Sockets
 
 So, I have created function called connect to connect to the TCP server. 
-```C++
+```cpp
 
 SOCKET Connect(string ipAddress, int port) {
 
@@ -429,7 +429,7 @@ This function will return the opened socket handle to be able to send and receiv
 and here is our send and receive functions.  
 
 #### Send TCP Function
-```C++
+```cpp
 int SendData( SOCKET sock, char* DATA, DWORD DataLength ) {
     send (sock, (char*)&DataLength , 4, 0 );
     printf( "[*] Sending Data Size: %i, \t Data: %s\n", sizeof DATA, DATA);
@@ -439,7 +439,7 @@ int SendData( SOCKET sock, char* DATA, DWORD DataLength ) {
 
 ```
 #### Receive TCP Function
-```C++
+```cpp
 int RecData(SOCKET sock, char *DATA) {
 
     DWORD  total = 0, temp = 0;
@@ -462,7 +462,7 @@ int RecData(SOCKET sock, char *DATA) {
 
 Opening Named pipe handle is like opening a file could be done through `CreateFileA` WinAPI.
 
-```C++
+```cpp
 HANDLE hNamedPipe =  INVALID_HANDLE_VALUE;
 while ( hNamedPipe == INVALID_HANDLE_VALUE )
 { 
@@ -476,7 +476,7 @@ You can notice the while loop, because the third-party may try to open handle fo
 ### Pipe Write/Read Function
 
 **Write Function**
-```C++
+```cpp
 void WriteData( HANDLE hNamedPipe, char* DATA, DWORD DataLength ) {
 
     DWORD wrote = 0;
@@ -492,7 +492,7 @@ void WriteData( HANDLE hNamedPipe, char* DATA, DWORD DataLength ) {
 }
 ```
 **Read Function**
-```C++
+```cpp
 DWORD ReadData( HANDLE hNamedPipe, char* DATA ) {
     
     DWORD  temp = 0;
