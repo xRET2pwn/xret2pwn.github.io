@@ -16,28 +16,28 @@ Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree
 
 1. [What is the External C2?](#what-is-the-external-c2)
 	1. [Is it useful?](#is-it-useful)
-2. [Understand named pipe]()
-	1. [What is the Named Pipe?]()
-	2. [Types of Pipes]()
-	3. [How it works?]()
-3. [Build a Basic Demo]()
-	1. [Demo Structure]()
-    2. [Teamserver]()
-    3. [Third-Party Server]()
-    4. [Named Pipe communication]()
-        1. [Named Pipe Server]()
-        2. [Named Pipe Client]()
-    5. [How is the Agent looks like?]()
-        1. [Create Named pipe]()
-        2. [Write Function]()
-        3. [Read Function]()
-    6. [Build our third-party client]()
-        1. [Sockets]()
-        2. [Send Socket Function]()
-        3. [Receive Socket Fucntion]()
-        4. [Open Named pipe handle]()
-        5. [Pipe Write/Read Function]()
-    7. [Execution]
+2. [Understand named pipe](#understand-named-pipe)
+	1. [What is the Named Pipe?](#what-is-the-named-pipe)
+	2. [Types of Pipes](#types-of-pipes)
+	3. [How it works?](#how-it-works)
+3. [Build a Basic Demo](#build-a-basic-Demo)
+	1. [Demo Structure](#demo-structure)
+    2. [Teamserver](#teamserver)
+    3. [Third-Party Server](#third-party-server)
+    4. [Named Pipe communication](#named-pipe-communication)
+        1. [Named Pipe Server](#named-pipe-server)
+        2. [Named Pipe Client](#named-pipe-client)
+    5. [How is the Agent looks like?](#how-is-the-agent-looks-like)
+        1. [Create Named pipe](#create-named-pipe)
+        2. [Write Function](#write-function)
+        3. [Read Function](#read-function)
+    6. [Build our third-party client](#build-our-third-party-client)
+        1. [Sockets](#sockets)
+        2. [Send Socket Function](#send-socket-function)
+        3. [Receive Socket Fucntion](#receive-socket-fucntion)
+        4. [Open Named pipe handle](#open-named-pipe-handle)
+        5. [Pipe Write/Read Function](#pipe-writeread-function)
+    7. [Execution](#execution)
 
 # What is the External C2?
 
@@ -526,17 +526,17 @@ The Execution flow should be like that.
 3. Agent (To create the named pipe).
 4. Third-party Client (To connect to the third-party TCP connection and open handle to the named pipe).
 
-**Teamserver**
-![3](/assets/img/posts/Myths-About-External-C2/3.png)
+**Teamserver**  
+![3](/assets/img/posts/Myths-About-External-C2/3.png)  
 
-**Third-party Server**
-![4](/assets/img/posts/Myths-About-External-C2/4.png)
+**Third-party Server**  
+![4](/assets/img/posts/Myths-About-External-C2/4.png)  
 
-**Agent**
-![5](/assets/img/posts/Myths-About-External-C2/5.png)
+**Agent**  
+![5](/assets/img/posts/Myths-About-External-C2/5.png)  
 
-**Third-party Client**
-![6](/assets/img/posts/Myths-About-External-C2/6.png)
+**Third-party Client**  
+![6](/assets/img/posts/Myths-About-External-C2/6.png)  
 
 
 <hr>
