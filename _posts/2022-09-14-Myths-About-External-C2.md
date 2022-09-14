@@ -538,15 +538,13 @@ The Execution flow should be like that.
 ![6](/assets/img/posts/Myths-About-External-C2/6.png)  
 
 
+[Blogposts-Tools/Implement External C2 Feature in your C2 like Cobalt Strike at main · xRET2pwn/Blogposts-Tools](https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Implement%20External%20C2%20Feature%20in%20your%20C2%20like%20Cobalt%20Strike)
 
-Here is the final code [Github](https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Implement%20External%20C2%20Feature%20in%20your%20C2%20like%20Cobalt%20Strike), Thank you for reading.
 
 <hr>
 
 If you have feedback please go ahead and DM me on Twitter, See you in the next blogpost.
 
-
-<div class="grid-1aWVsE"><div class="embedSuppressButton-1rZHq6" aria-label="Remove all embeds" role="button" tabindex="0"><svg aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path></svg></div><div class="embedProvider-1GSN0c embedMargin-2PsaQ4"><span>GitHub</span></div><div class="embedTitle-2n1pEb embedMargin-2PsaQ4"><a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX embedTitleLink-1QbYA- embedLink-1TLNja embedTitle-2n1pEb" tabindex="0" href="https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Implement%20External%20C2%20Feature%20in%20your%20C2%20like%20Cobalt%20Strike" rel="noreferrer noopener" target="_blank" role="button">Blogposts-Tools/Implement External C2 Feature in your C2 like Cobal...</a></div><div class="embedDescription-1DrJxZ embedMargin-2PsaQ4">NULL. Contribute to xRET2pwn/Blogposts-Tools development by creating an account on GitHub.</div><div class="imageContent-3Av-9c embedWrapper-1MtIDg embedMedia-1mdWSP embedImage-2Ynqkh"><div class="imageContainer-10XenG"><div class="imageWrapper-oMkQl4 imageZoom-3yLCXY clickable-LksVCf" style="max-width: 400px; width: 100%;"><a tabindex="-1" aria-hidden="true" class="originalLink-Azwuo9" href="https://opengraph.githubassets.com/eeed3823964779a9adc8d54ceb910904de992496ccfca8a7c0b455ea4d79238c/xRET2pwn/Blogposts-Tools" data-role="img"></a><div class="clickableWrapper-2WTAkL" tabindex="0" aria-label="Blogposts-Tools/Implement External C2 Feature in your C2 like Cobal..." aria-describedby="uid_4" role="button"><img alt="Blogposts-Tools/Implement External C2 Feature in your C2 like Cobal..." src="https://images-ext-1.discordapp.net/external/oYxw1OGFdCfj4-zwXb_dSp5cpLptXq9f51kjEr3lOu8/https/opengraph.githubassets.com/eeed3823964779a9adc8d54ceb910904de992496ccfca8a7c0b455ea4d79238c/xRET2pwn/Blogposts-Tools?width=400&amp;height=200" style="max-width: 400px; max-height: 200px; width: 100%; display: block; aspect-ratio: 400 / 200;"></div></div></div></div></div>
   
 
 <a href="https://www.buymeacoffee.com/ret2pwn" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
