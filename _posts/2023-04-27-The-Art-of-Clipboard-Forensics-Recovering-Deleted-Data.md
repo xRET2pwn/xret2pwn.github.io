@@ -12,8 +12,6 @@ categories: [forensics]
 In this blog post, I'll be sharing my notes from my exploration of clipboard forensics. I'll cover the tools and techniques used in this process and explain how you can use them to dump the clipboard data even if it deleted. So, if you're interested in learning more about clipboard forensics, read on!
 
 # Table of Content
-Table of Contents
-=================
 
 1. [Introduction](#introduction)
 2. [Goal and Objective](#goal-and-objective)
