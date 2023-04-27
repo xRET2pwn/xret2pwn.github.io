@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-title: Ret2Pwn # your site title
+title: RET2Pwn # your site title
 author: Hazem Hisham # You :P
 description: Binary Exploitation Player | Wannabe Red Team Operator
 
@@ -8,7 +8,7 @@ url: "https://xret2pwn.github.io/" # the base hostname & protocol for your site,
 
 # SEO PLUGIN
 social:
-  name: Ret2pwn
+  name: RET2Pwn
   links:
     - https://twitter.com/RET2_pwn
     - https://github.com/xRET2pwn
@@ -27,7 +27,7 @@ hero_img: posts/Background.jfif # Main background image: use the path from /asse
 
 #email:  # email for form submission
 
-twitter_username: Ret2Pwn # replace with your_twitter_username or comment to remove link from footer
+twitter_username: RET2Pwn # replace with your_twitter_username or comment to remove link from footer
 github_username:  xRet2Pwn # replace with your_github_username or comment to remove link from footer
 linkedin_username: hazemhesham
 #instagram_username: # replace with your_instagram_username or comment to remove link from footer
