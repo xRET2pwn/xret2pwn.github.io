@@ -21,10 +21,10 @@ Now that the goal is clear, the next step is to figure out where to start. I dec
 
 To find out, I used a tool called **Process Monitor** to monitor registry activity on the system. After some digging, I was able to locate the registry key responsible for controlling the Clipboard feature: ClipboardEnabled. When this key is set to 1, the clipboard is enabled, and when it is set to 0, the clipboard is disabled.
 
-![screenshot_1](/assets/img/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/IoTPart1/ProcessMonitor.png)
+![screenshot_1](/assets/img/posts/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/ProcessMonitor.png)
 
 
-![screenshot_1](/assets/img/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/IoTPart1/RegistryEditor.png)
+![screenshot_1](/assets/img/posts/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/RegistryEditor.png)
 
 
 # Enumeration
@@ -91,12 +91,12 @@ While I didn't attempt to reverse the DLL to write a decryption function to read
 I then wondered if the data was already decrypted by the process, could I scrape the Clipboard data from memory? Upon investigating further, I discovered that the process that uses `CLIPC.dll` is called `TextinputHost.exe`. So, I used **Process Hacker** to search for the Clipboarded data.
 
 
-![screenshot_1](/assets/img/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/IoTPart1/ProcHacker1.png)
+![screenshot_1](/assets/img/posts/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/ProcHacker1.png)
 
 
 I then cleared the Clipboard data history and checked if it could still be scraped from memory.
 
-![screenshot_1](/assets/img/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/IoTPart1/ProcHacker2.png)
+![screenshot_1](/assets/img/posts/The-Art-of-Clipboard-Forensics-Recovering-Deleted-Data/ProcHacker2.png)
 
 As expected it didn't get deleted from memory.
 
