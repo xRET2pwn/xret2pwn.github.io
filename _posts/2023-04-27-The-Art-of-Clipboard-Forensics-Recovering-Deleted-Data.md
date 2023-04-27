@@ -243,8 +243,8 @@ if __name__ == "__main__":
 So I will just add two more ways (TextinputHost Scrapping, Current Clipboard Data) in this script soon, because I have burn out :joy: So I just want to play Fortnite and fifa23 the whole day :joy:
 
 # CrackMapExec Module
-
-Here is the full module, soon I will just pull it into the Crackmapexec Github.
+Imagen how many credentials we can get if used made a module for crackmapexec to dump the clipboard data. 
+So, here is the full module, soon I will just pull it into the Crackmapexec Github.
 
 ```python
 # ClipboardHistory module for CME 
@@ -325,4 +325,4 @@ class CMEModule:
 
 # Conclusion
 
-In conclusion, clipboard forensics is a fascinating topic that involves delving deeper into the Windows Clipboard system and discovering its hidden features. By exploring Windows APIs and using tools such as Process Monitor and Process Hacker, it is possible to recover deleted Clipboard data and scrape Clipboard data from memory. Although the process of scraping deleted data can be challenging, this blog post has provided valuable insights into the techniques and tools used in clipboard forensics
+In conclusion, clipboard forensics is a fascinating topic that involves delving deeper into the Windows Clipboard system and discovering its hidden features. By exploring Windows APIs and using tools such as Process Monitor and Process Hacker, it is possible to recover deleted Clipboard data and scrape Clipboard data from memory. Although the process of scraping deleted data can be challenging, this blog post has provided valuable insights into the techniques and tools used in clipboard forensics. And at the end have created a crackmapexec module that can be used to extract clipboard data
