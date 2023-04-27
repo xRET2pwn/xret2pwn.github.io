@@ -15,15 +15,15 @@ In this blog post, I'll be sharing my notes from my exploration of clipboard for
 Table of Contents
 =================
 
-* [Introduction](#introduction)
-* [Goal and Objective](#goal-and-objective)
-* [Enabling the Clipboard](#enabling-the-clipboard)
-* [Enumeration](#enumeration)
-* [Recovering Deleted Clipboard Data](#recovering-deleted-clipboard-data)
-* [Clipboard History APIs](#clipboard-history-apis)
-* [Another Way](#another-way)
-* [CrackMapExec Module](#crackmapexec-module)
-* [Conclusion](#conclusion)
+1. [Introduction](#introduction)
+2. [Goal and Objective](#goal-and-objective)
+3. [Enabling the Clipboard](#enabling-the-clipboard)
+4. [Enumeration](#enumeration)
+5. [Recovering Deleted Clipboard Data](#recovering-deleted-clipboard-data)
+6. [Clipboard History APIs](#clipboard-history-apis)
+7. [Another Way](#another-way)
+8. [CrackMapExec Module](#crackmapexec-module)
+9. [Conclusion](#conclusion)
 
 # Goal and Objective
 
