@@ -246,6 +246,8 @@ So I will just add two more ways (TextinputHost Scrapping, Current Clipboard Dat
 Imagen how many credentials we can get if used made a module for crackmapexec to dump the clipboard data. 
 So, here is the full module, soon I will just pull it into the Crackmapexec Github.
 
+[Blogposts-Tools/Clipboard History Sinper at main · xRET2pwn/Blogposts-Tools · GitHub](https://github.com/xRET2pwn/Blogposts-Tools/tree/main/Clipboard%20History%20Sinper)
+
 ```python
 # ClipboardHistory module for CME 
 # Author of the module : https://twitter.com/RET2_pwn
