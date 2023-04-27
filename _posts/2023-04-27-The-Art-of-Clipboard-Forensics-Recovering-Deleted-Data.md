@@ -11,6 +11,20 @@ categories: [forensics]
 
 In this blog post, I'll be sharing my notes from my exploration of clipboard forensics. I'll cover the tools and techniques used in this process and explain how you can use them to dump the clipboard data even if it deleted. So, if you're interested in learning more about clipboard forensics, read on!
 
+# Table of Content
+Table of Contents
+=================
+
+* [Introduction](#introduction)
+* [Goal and Objective](#goal-and-objective)
+* [Enabling the Clipboard](#enabling-the-clipboard)
+* [Enumeration](#enumeration)
+* [Recovering Deleted Clipboard Data](#recovering-deleted-clipboard-data)
+* [Clipboard History APIs](#clipboard-history-apis)
+* [Another Way](#another-way)
+* [CrackMapExec Module](#crackmapexec-module)
+* [Conclusion](#conclusion)
+
 # Goal and Objective
 
 My goal was to challenge myself by exploring Windows APIs, and I chose to focus on the Clipboard. While I knew that Microsoft had thoroughly documented the Clipboard, I wanted to test my skills by delving deeper into its data APIs. During my exploration, I stumbled upon something that completely changed my objective: the possibility of recovering deleted Clipboard data. This discovery motivated me to push my skills further and find a way to dump even the deleted Clipboard data. I will share my findings and techniques in this blog post. I hope you enjoy reading!
